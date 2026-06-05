@@ -41,11 +41,13 @@ export function Footer() {
               </li>
               <li>
                 <a href={SITE.contact.primaryPhoneHref}>
-                  {SITE.contact.primaryPhone}
+                  {SITE.contact.primaryPhone} · {SITE.contact.primaryLabel}
                 </a>
               </li>
               <li>
-                <a href={SITE.contact.landlineHref}>{SITE.contact.landline}</a>
+                <a href={SITE.contact.devangPhoneHref}>
+                  {SITE.contact.devangPhone} · {SITE.contact.devangLabel}
+                </a>
               </li>
               <li>
                 <a href={SITE.contact.emailHref}>{SITE.contact.email}</a>

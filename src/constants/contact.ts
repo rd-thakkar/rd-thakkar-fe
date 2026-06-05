@@ -32,10 +32,10 @@ export const CONTACT_PAGE = {
       "Turnkey project",
       "Other",
     ],
-    whatsappNote: "Or WhatsApp the same details to",
+    whatsappNote: "Or WhatsApp us on",
     submit: "Send enquiry",
     successMessage:
-      "Your enquiry has reached our counter — Prakash or a member of our team will respond within the working day.",
+      "Your enquiry has reached our counter — Prakash, Devang or a member of our team will respond within the working day.",
     successPrefix: "Thank you.",
   },
   map: {
@@ -46,9 +46,7 @@ export const CONTACT_PAGE = {
   },
   labels: {
     showroom: "Showroom & warehouse",
-    speakTo: "Speak to Prakash Thakkar",
-    landline: "Landline",
-    altMobile: "Alt. mobile",
+    speakTo: "Speak to the founders",
     email: "Email the office",
     hours: "Showroom hours",
   },

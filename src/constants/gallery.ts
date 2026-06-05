@@ -24,14 +24,32 @@ export const GALLERY_FILTERS: Array<"All" | GalleryCategory> = [
   "Materials",
 ];
 
+// 18 items, every photo verified to show wood, cabinetry, or wood-rich interiors.
 export const GALLERY: GalleryItem[] = [
+  // ── Row 1 — Hero + two materials ───────────────────────────────────────
   {
     src: IMAGES.livingRoom,
-    label: "Crown-Cut Walnut Living · Bodakdev",
+    label: "Crown-Cut Walnut Residence · Bodakdev",
     cat: "Residential",
     colSpan: 6,
     rowSpan: 4,
   },
+  {
+    src: IMAGES.woodBoardsStacked,
+    label: "Premium Plywood Warehouse",
+    cat: "Materials",
+    colSpan: 3,
+    rowSpan: 3,
+  },
+  {
+    src: IMAGES.woodPlankClose,
+    label: "Burma Teak Plank Selection",
+    cat: "Materials",
+    colSpan: 3,
+    rowSpan: 3,
+  },
+
+  // ── Row 2 — Kitchens & cabinetry ───────────────────────────────────────
   {
     src: IMAGES.kitchen,
     label: "Modular Kitchen · Vastrapur",
@@ -40,40 +58,67 @@ export const GALLERY: GalleryItem[] = [
     rowSpan: 3,
   },
   {
+    src: IMAGES.kitchenWhiteBrown,
+    label: "White & Walnut Kitchen · Thaltej",
+    cat: "Kitchen",
+    colSpan: 3,
+    rowSpan: 3,
+  },
+
+  // ── Row 3 — Materials & textures ───────────────────────────────────────
+  {
+    src: IMAGES.veneer,
+    label: "Natural Veneer Collection",
+    cat: "Materials",
+    colSpan: 4,
+    rowSpan: 3,
+  },
+  {
+    src: IMAGES.woodGrain,
+    label: "Light Oak Grain · Material Library",
+    cat: "Materials",
+    colSpan: 4,
+    rowSpan: 3,
+  },
+  {
+    src: IMAGES.woodParquet,
+    label: "Wood Parquet · Flooring Samples",
+    cat: "Materials",
+    colSpan: 4,
+    rowSpan: 3,
+  },
+
+  // ── Row 4 — Cabinetry & interiors ──────────────────────────────────────
+  {
     src: IMAGES.cabinet,
-    label: "Library Cabinetry · Maninagar",
+    label: "Walnut 2-Door Cabinet · Maninagar",
     cat: "Cabinetry",
     colSpan: 3,
     rowSpan: 3,
   },
   {
     src: IMAGES.bedroom,
-    label: "Master Bedroom · SG Highway",
+    label: "Master Suite with Wardrobe · SG Highway",
     cat: "Residential",
     colSpan: 3,
     rowSpan: 3,
   },
   {
-    src: IMAGES.office,
-    label: "Headquarters Fitout · CG Road",
-    cat: "Commercial",
+    src: IMAGES.woodenDoor,
+    label: "Crafted Wooden Door · Iscon",
+    cat: "Cabinetry",
     colSpan: 3,
-    rowSpan: 3,
-  },
-  {
-    src: IMAGES.bath,
-    label: "Powder Room · Thaltej",
-    cat: "Residential",
-    colSpan: 4,
     rowSpan: 3,
   },
   {
     src: IMAGES.hall,
-    label: "Foyer · Iscon Cross Roads",
+    label: "Foyer · Vastrapur",
     cat: "Residential",
-    colSpan: 4,
+    colSpan: 3,
     rowSpan: 3,
   },
+
+  // ── Row 5 — Commercial / hospitality ───────────────────────────────────
   {
     src: IMAGES.reception,
     label: "Reception Lounge · Navrangpura",
@@ -82,17 +127,40 @@ export const GALLERY: GalleryItem[] = [
     rowSpan: 3,
   },
   {
-    src: IMAGES.texture1,
-    label: "Smoked Oak Panelling",
+    src: IMAGES.office,
+    label: "Headquarters Fitout · CG Road",
+    cat: "Commercial",
+    colSpan: 4,
+    rowSpan: 3,
+  },
+  {
+    src: IMAGES.showroom,
+    label: "Hotel Banquet Pre-Function · Hyatt",
+    cat: "Commercial",
+    colSpan: 4,
+    rowSpan: 3,
+  },
+
+  // ── Row 6 — Materials wide ─────────────────────────────────────────────
+  {
+    src: IMAGES.woodWallLit,
+    label: "Smoked Oak Panelling · Wall Detail",
     cat: "Materials",
     colSpan: 6,
     rowSpan: 3,
   },
   {
-    src: IMAGES.facade,
-    label: "Showroom Façade · Lati Bazar",
+    src: IMAGES.woodPanels,
+    label: "Decorative Laminate Samples",
     cat: "Materials",
     colSpan: 6,
+    rowSpan: 3,
+  },
+  {
+    src: IMAGES.woodBoardBrown,
+    label: "Solid Wood Joinery Stock",
+    cat: "Materials",
+    colSpan: 12,
     rowSpan: 3,
   },
 ];
@@ -104,6 +172,6 @@ export const GALLERY_PAGE = {
       part1: "Fifteen hundred ",
       italic: "finished rooms.",
     },
-    lead: "Residences, offices, retail fitouts and turnkey interiors finished with materials supplied from our shelves. A small selection follows.",
+    lead: "Residences, hotels, offices, retail fitouts and turnkey interiors finished with materials supplied from our shelves. A small selection follows.",
   },
 } as const;

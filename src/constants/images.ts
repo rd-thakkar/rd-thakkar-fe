@@ -1,28 +1,58 @@
 // Centralised image references.
-// To swap a photo, change a URL here — every page picks it up automatically.
+// All Unsplash URLs below were verified via direct lookup on unsplash.com —
+// they show wood, plywood, cabinetry, kitchens, or wood-rich interiors.
+//
+// To swap a photo: replace a URL — every page picks it up automatically.
+
+const u = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`;
+const uPlus = (id: string) =>
+  `https://plus.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`;
 
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=80",
-  livingRoom: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80",
-  kitchen: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
-  bedroom: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
-  office: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-  wood: "https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1200&q=80",
-  laminate: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=1200&q=80",
-  plywood: "https://images.unsplash.com/photo-1622037022824-0c71d511ef3c?auto=format&fit=crop&w=1200&q=80",
-  hardware: "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80",
-  veneer: "https://images.unsplash.com/photo-1604147495798-57beb5d6af73?auto=format&fit=crop&w=1200&q=80",
-  mdf: "https://images.unsplash.com/photo-1567361808960-dec9cb578182?auto=format&fit=crop&w=1200&q=80",
-  workshop: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80",
-  showroom: "https://images.unsplash.com/photo-1556909195-450ba646b059?auto=format&fit=crop&w=1400&q=80",
-  hall: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-  bath: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80",
-  cabinet: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80",
-  texture1: "https://images.unsplash.com/photo-1610552050890-fe99536c2615?auto=format&fit=crop&w=1200&q=80",
-  texture2: "https://images.unsplash.com/photo-1620735692151-c531ac6c7e2c?auto=format&fit=crop&w=1200&q=80",
-  facade: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
-  store: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80",
-  reception: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
+  // ── Hero & carousel — luxury interiors with wood ──────────────────────
+  hero: u("photo-1600585154340-be6161a56a0c"),
+  heroCarousel2: uPlus("premium_photo-1661962841993-99a07c27c9f4"), // modern luxury living
+  heroCarousel3: uPlus("premium_photo-1661876005092-57b7b5d4060d"), // modern chalet interior
+  heroCarousel4: uPlus("premium_photo-1683141318297-75a3d8e86476"), // modern living with wooden dresser
+  heroCarousel5: u("photo-1622372738946-62e02505feb3"), // modern kitchen with wood cabinetry
+
+  // ── Material close-ups (verified wood photos) ─────────────────────────
+  wood: u("photo-1611072337226-1140ab367200"), // light oak plank texture
+  plywood: u("photo-1700973408133-b45276ec8feb"), // stack of wooden boards
+  veneer: u("photo-1597113366853-fea190b6cd82"), // brown wooden plank close
+  mdf: u("photo-1576092762791-dd9e2220abd1"), // wood parquet
+  laminate: u("photo-1700906026482-f409e961aabc"), // wooden surface with squares
+  hardware: u("photo-1581244277943-fe4a9c777189"), // hardware/fittings (kept)
+
+  // ── Wood textures & paneling (all verified wood) ──────────────────────
+  woodGrain: u("photo-1762978902169-e5789f7b56b8"), // light brown wood grain
+  woodPlankLight: u("photo-1611072337226-1140ab367200"), // duplicate of wood — convenience alias
+  woodBoardBrown: u("photo-1611600700192-d87eaeed4f81"), // brown/white wooden board
+  woodPanels: u("photo-1700906026482-f409e961aabc"), // wooden surface squares
+  woodWallLit: u("photo-1531824475211-72594993ce2a"), // wooden wall with light
+  woodPlankClose: u("photo-1597113366853-fea190b6cd82"), // brown wooden plank close
+  woodParquet: u("photo-1576092762791-dd9e2220abd1"), // parquet floor
+  woodBoardsStacked: u("photo-1700973408133-b45276ec8feb"), // stacked boards
+
+  // ── Spaces — wood-rich completed interiors ─────────────────────────────
+  livingRoom: uPlus("premium_photo-1661962841993-99a07c27c9f4"), // luxury living
+  kitchen: u("photo-1622372738946-62e02505feb3"), // kitchen with wood cabinets
+  kitchenWhiteBrown: u("photo-1600489000022-c2086d79f9d4"), // white & brown kitchen
+  bedroom: u("photo-1722349674028-a148f4364e43"), // bedroom with wooden closet
+  office: u("photo-1682450195449-32ab08ddf7e7"), // room with large wooden door
+  hall: uPlus("premium_photo-1661876005092-57b7b5d4060d"), // chalet interior hallway feel
+  cabinet: u("photo-1558997519-83ea9252edf8"), // brown wooden 2-door cabinet
+  reception: uPlus("premium_photo-1683141318297-75a3d8e86476"), // living with dresser
+  showroom: u("photo-1600489000022-c2086d79f9d4"), // showroom feel — kitchen cabinets
+  workshop: u("photo-1700973408133-b45276ec8feb"), // boards stacked = warehouse
+  woodenDoor: u("photo-1682450195449-32ab08ddf7e7"), // large wooden door
+
+  // ── Legacy aliases kept for older imports ────────────────────────────
+  texture1: u("photo-1762978902169-e5789f7b56b8"), // wood grain (was problem image)
+  texture2: u("photo-1611600700192-d87eaeed4f81"), // brown/white board (was brick — fixed)
+  facade: uPlus("premium_photo-1661876005092-57b7b5d4060d"), // chalet
+  store: uPlus("premium_photo-1683141318297-75a3d8e86476"), // living with dresser
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

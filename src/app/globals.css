@@ -265,7 +265,7 @@ p.lede {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 28px;
   color: var(--navy-ink);
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -316,6 +316,11 @@ p.lede {
   align-items: center;
   gap: 16px;
 }
+.phone-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 .phone-pill {
   display: inline-flex;
   align-items: center;
@@ -337,7 +342,7 @@ p.lede {
   padding: 8px 12px;
 }
 @media (max-width: 1180px) {
-  .phone-pill {
+  .phone-stack {
     display: none;
   }
 }
@@ -362,11 +367,15 @@ p.lede {
 }
 @media (max-width: 520px) {
   .brand-text .name {
-    font-size: 18px;
+    font-size: 20px;
   }
   .nav-cta .btn {
     padding: 12px 16px;
     font-size: 12px;
+  }
+  /* Hide "Get a Quote" button on small screens to prevent header overflow */
+  .nav-cta .nav-quote-btn {
+    display: none;
   }
 }
 
@@ -723,27 +732,43 @@ p.lede {
   color: var(--navy);
 }
 
+/* Category card brand pills */
+.cat-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+.cat-brand-pill {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 /* ===== Brand strip ===== */
 .brands {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: #fff;
+  overflow: hidden;
 }
-@media (max-width: 900px) {
-  .brands {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (max-width: 560px) {
+@media (max-width: 720px) {
   .brands {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 .brand-cell {
-  padding: 30px 22px;
+  padding: 28px 22px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   text-align: center;
@@ -751,8 +776,8 @@ p.lede {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 130px;
-  gap: 8px;
+  min-height: 140px;
+  gap: 12px;
   transition: background 0.2s ease;
 }
 .brand-cell:hover {
@@ -1642,66 +1667,14 @@ p.lede {
   margin: 0;
 }
 
-/* Map placeholder */
+/* Map (real Google iframe) */
 .map-frame {
-  background: var(--paper-2);
   border-radius: 3px;
-  height: 380px;
-  position: relative;
+  height: 460px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background-image: linear-gradient(
-      to right,
-      rgba(26, 42, 94, 0.06) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to bottom, rgba(26, 42, 94, 0.06) 1px, transparent 1px);
-  background-size: 24px 24px;
 }
-.map-pin {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.map-pin .pin {
-  width: 36px;
-  height: 48px;
-  background: var(--red);
-  clip-path: path(
-    "M18 0C8 0 0 8 0 18c0 13 18 30 18 30s18-17 18-30c0-10-8-18-18-18zM18 24a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"
-  );
-  filter: drop-shadow(0 6px 12px rgba(216, 58, 47, 0.35));
-}
-.map-pin .pin-label {
-  background: #fff;
-  padding: 6px 12px;
-  border-radius: 2px;
-  font-size: 12px;
-  font-family: var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--navy-ink);
-  border: 1px solid var(--line);
-}
-.map-coords {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  background: #fff;
-  padding: 6px 10px;
-  border-radius: 2px;
-  border: 1px solid var(--line);
-}
+/* .map-pin, .pin, .pin-label, .map-coords removed — replaced by real Google iframe */
 
 /* CTA band */
 .cta-band {
@@ -1877,3 +1850,106 @@ p.lede {
     transform: translateY(0);
   }
 }
+
+/* ===== Hero carousel ===== */
+/* Slides are absolutely positioned inside .hero-visual (position:relative; overflow:hidden) */
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.carousel-slide--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Clients auto-scroll section ===== */
+.clients-section {
+  background: var(--navy-ink);
+  color: #efe7d6;
+  overflow: hidden;
+}
+.clients-section .section-head {
+  margin-bottom: 32px;
+}
+.clients-section .section-head h2 {
+  color: #fff;
+}
+.clients-section .section-head .lead {
+  color: rgba(239, 231, 214, 0.7);
+}
+.clients-section .eyebrow {
+  color: rgba(239, 231, 214, 0.5);
+}
+.clients-section .eyebrow .dot {
+  background: var(--red);
+}
+.clients-track-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.clients-track {
+  display: inline-flex;
+  animation: clientsScroll 38s linear infinite;
+}
+.clients-track:hover {
+  animation-play-state: paused;
+}
+.clients-inner {
+  display: inline-flex;
+  align-items: center;
+}
+.client-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 44px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(22px, 2.2vw, 32px);
+  color: rgba(239, 231, 214, 0.88);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.client-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+@keyframes clientsScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Brand logo image ===== */
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 4px 0;
+}
+
+/* ===== Leaders grid (About page — two people) ===== */
+.leaders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 840px) {
+  .leaders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

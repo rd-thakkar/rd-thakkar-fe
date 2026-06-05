@@ -12,49 +12,56 @@ export type Category = {
   italic?: string;
   iconKey: CategoryIconKey;
   desc: string;
+  brands: string[];
 };
 
 export const CATEGORIES: Category[] = [
   {
     num: "01",
     name: "Plywood",
-    italic: "wood",
+    italic: "",
     iconKey: "plywood",
-    desc: "BWP, MR, marine and commercial grades — for kitchens, wardrobes and shopfit.",
+    desc: "BWP, MR, Commercial, Fire Retardant, Film Face & Calibrated grades.",
+    brands: ["Royal Touche", "Century", "GreenPly"],
   },
   {
     num: "02",
     name: "MDF",
-    italic: "Boards",
+    italic: "& Boards",
     iconKey: "mdf",
-    desc: "Pre-laminated and plain MDF for furniture, panelling and CNC routing.",
+    desc: "MDF, HDF, Fire Smart Panel, Boilo, Particle Board — plain & pre-laminated.",
+    brands: ["Century"],
   },
   {
     num: "03",
     name: "Solid",
     italic: "Wood",
     iconKey: "wood",
-    desc: "Seasoned teak, sheesham and engineered hardwoods for joinery and door frames.",
+    desc: "Burma Teak, Ivory Teak, Ghana Teak, Pine, White Ash, White Oak, Chillwood.",
+    brands: ["Burma Teak", "Ghana Teak", "Pine"],
   },
   {
     num: "04",
     name: "Laminates",
-    italic: "&",
+    italic: "",
     iconKey: "laminate",
-    desc: "0.8 / 1mm decorative laminates across textures, solids, woodgrains and acrylics.",
+    desc: "Decorative 1mm & 0.8mm HPL — woodgrains, solids, abstracts and textures.",
+    brands: ["Royal Touche", "Airolam", "Formica", "Rehau"],
   },
   {
     num: "05",
     name: "Veneers",
     italic: "",
     iconKey: "veneer",
-    desc: "Natural and reconstituted veneers — Italian walnut to oak and teak grain.",
+    desc: "Burma teak veneer, all types of natural and reconstituted veneers in 4×8 sheets.",
+    brands: ["Century", "Natural", "Recon"],
   },
   {
     num: "06",
     name: "Hardware",
     italic: "",
     iconKey: "hardware",
-    desc: "Hinges, channels, locks, profiles and fittings from Häfele, Hettich and Ebco.",
+    desc: "Concealed hinges, channels, drawer systems, handles, fittings and accessories.",
+    brands: ["Hettich", "Häfele", "Ebco"],
   },
 ];

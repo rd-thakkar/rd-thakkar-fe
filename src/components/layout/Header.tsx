@@ -19,7 +19,7 @@ export function Header() {
     <header className="site-header">
       <div className="nav-wrap">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <Logo size={44} />
+          <Logo size={54} />
           <div className="brand-text">
             <span className="name">{SITE.name}</span>
             <span className="since">
@@ -42,10 +42,15 @@ export function Header() {
         </nav>
 
         <div className="nav-cta">
-          <a href={SITE.contact.primaryPhoneHref} className="phone-pill">
-            <PhoneIcon /> {SITE.contact.primaryPhone}
-          </a>
-          <Link href="/contact" className="btn btn-primary">
+          <div className="phone-stack">
+            <a href={SITE.contact.primaryPhoneHref} className="phone-pill">
+              <PhoneIcon /> {SITE.contact.primaryPhone}
+            </a>
+            <a href={SITE.contact.devangPhoneHref} className="phone-pill">
+              <PhoneIcon /> {SITE.contact.devangPhone}
+            </a>
+          </div>
+          <Link href="/contact" className="btn btn-primary nav-quote-btn">
             Get a Quote <ArrowIcon />
           </Link>
           <button

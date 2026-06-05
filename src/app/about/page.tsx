@@ -56,6 +56,23 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Commitment */}
+      <section className="section dark">
+        <div className="container">
+          <span className="eyebrow" style={{ color: "rgba(239,231,214,0.55)" }}>
+            <span className="dot" />
+            {ABOUT.commitment.eyebrow}
+          </span>
+          <h2 className="display" style={{ marginTop: 16, marginBottom: 24, fontSize: "clamp(32px,4vw,56px)" }}>
+            {ABOUT.commitment.headlineStart}
+            <span className="red-it">{ABOUT.commitment.headlineItalic}</span>
+          </h2>
+          <p style={{ fontSize: 18, maxWidth: 720, lineHeight: 1.65 }}>
+            {ABOUT.commitment.body}
+          </p>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="section alt">
         <div className="container">
@@ -77,7 +94,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Leadership — two leaders side by side */}
       <section className="section">
         <div className="container">
           <SectionHead
@@ -86,28 +103,34 @@ export default function AboutPage() {
             headlineItalic={ABOUT.leadership.headlineItalic}
             lead={ABOUT.leadership.lead}
           />
-          <div className="leader-card">
-            <div className="leader-avatar">{ABOUT.leadership.leader.initials}</div>
-            <div>
-              <span className="kicker">{ABOUT.leadership.leader.kicker}</span>
-              <h3 className="display leader-name">
-                {ABOUT.leadership.leader.nameFirst}{" "}
-                <span className="red-it">
-                  {ABOUT.leadership.leader.nameLastItalic}
-                </span>
-              </h3>
-              <p style={{ fontSize: 15, maxWidth: 640 }}>
-                {ABOUT.leadership.leader.bio}
-              </p>
-              <div className="leader-contact">
-                <a href={SITE.contact.primaryPhoneHref} className="phone-pill">
-                  <PhoneIcon /> {SITE.contact.primaryPhone}
-                </a>
-                <a href={SITE.contact.emailHref} className="phone-pill">
-                  <MailIcon /> {SITE.contact.email}
-                </a>
-              </div>
-            </div>
+          <div className="leaders-grid">
+            {ABOUT.leadership.leaders.map((leader) => {
+              const phone =
+                leader.initials === "PT"
+                  ? { href: SITE.contact.primaryPhoneHref, label: SITE.contact.primaryPhone }
+                  : { href: SITE.contact.devangPhoneHref, label: SITE.contact.devangPhone };
+              return (
+                <div key={leader.initials} className="leader-card">
+                  <div className="leader-avatar">{leader.initials}</div>
+                  <div>
+                    <span className="kicker">{leader.kicker}</span>
+                    <h3 className="display leader-name">
+                      {leader.nameFirst}{" "}
+                      <span className="red-it">{leader.nameLastItalic}</span>
+                    </h3>
+                    <p style={{ fontSize: 15, maxWidth: 560 }}>{leader.bio}</p>
+                    <div className="leader-contact">
+                      <a href={phone.href} className="phone-pill">
+                        <PhoneIcon /> {phone.label}
+                      </a>
+                      <a href={SITE.contact.emailHref} className="phone-pill">
+                        <MailIcon /> {SITE.contact.email}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

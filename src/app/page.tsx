@@ -4,6 +4,8 @@ import { ArrowIcon, ArrowURIcon, CategoryIcon, TrophyIcon } from "@/components/u
 import { CTABand } from "@/components/layout/CTABand";
 import { BrandStrip } from "@/components/sections/BrandStrip";
 import { SectionHead } from "@/components/sections/SectionHead";
+import { ClientsScroll } from "@/components/sections/ClientsScroll";
+import { HeroCarousel } from "@/components/ui/HeroCarousel";
 import { HOME } from "@/constants/home";
 import { CATEGORIES } from "@/constants/categories";
 import { BRAND_TICKER } from "@/constants/brands";
@@ -67,15 +69,9 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* Auto-switching carousel — no manual controls */}
             <div className="hero-visual">
-              <Image
-                src={HOME.hero.image}
-                alt="Refined wood interior"
-                fill
-                priority
-                sizes="(max-width: 980px) 100vw, 50vw"
-                style={{ objectFit: "cover" }}
-              />
+              <HeroCarousel />
               <div className="badge">
                 <span className="yr">{HOME.hero.badge.value}</span>
                 <span className="lbl">{HOME.hero.badge.label}</span>
@@ -129,9 +125,6 @@ export default function HomePage() {
                 <div className="cat-icon">
                   <CategoryIcon name={c.iconKey} />
                 </div>
-                <div>
-                  <div className="num">{c.num} / 06</div>
-                </div>
                 <div className="name">
                   {c.name}
                   {c.italic && (
@@ -142,6 +135,11 @@ export default function HomePage() {
                   )}
                 </div>
                 <div className="desc">{c.desc}</div>
+                <div className="cat-brands">
+                  {c.brands.slice(0, 3).map((b) => (
+                    <span key={b} className="cat-brand-pill">{b}</span>
+                  ))}
+                </div>
                 <div className="cat-arrow">
                   <ArrowURIcon />
                 </div>
@@ -211,6 +209,9 @@ export default function HomePage() {
           <BrandStrip />
         </div>
       </section>
+
+      {/* Clients — auto-scrolling horizontal strip */}
+      <ClientsScroll />
 
       {/* Featured projects */}
       <section className="section alt">

@@ -33,6 +33,18 @@ export default function ProductsPage() {
         lead={PRODUCTS_PAGE.head.lead}
       />
 
+      <section className="section alt">
+        <div className="container">
+          <SectionHead
+            eyebrow={PRODUCTS_PAGE.brandStripSection.eyebrow}
+            headlineStart={PRODUCTS_PAGE.brandStripSection.headlineStart}
+            headlineItalic={PRODUCTS_PAGE.brandStripSection.headlineItalic}
+            lead={PRODUCTS_PAGE.brandStripSection.lead}
+          />
+          <BrandStrip />
+        </div>
+      </section>
+
       <section className="section pad-sm">
         <div className="container">
           <div className="filter-bar">
@@ -79,18 +91,6 @@ export default function ProductsPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section alt">
-        <div className="container">
-          <SectionHead
-            eyebrow={PRODUCTS_PAGE.brandStripSection.eyebrow}
-            headlineStart={PRODUCTS_PAGE.brandStripSection.headlineStart}
-            headlineItalic={PRODUCTS_PAGE.brandStripSection.headlineItalic}
-            lead={PRODUCTS_PAGE.brandStripSection.lead}
-          />
-          <BrandStrip />
         </div>
       </section>
 
