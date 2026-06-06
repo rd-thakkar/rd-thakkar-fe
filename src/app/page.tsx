@@ -76,10 +76,6 @@ export default function HomePage() {
                 <span className="yr">{HOME.hero.badge.value}</span>
                 <span className="lbl">{HOME.hero.badge.label}</span>
               </div>
-              <div className="frame-tag">
-                <span className="l">{HOME.hero.featuredTag.label}</span>
-                <span className="v">{HOME.hero.featuredTag.value}</span>
-              </div>
             </div>
           </div>
         </div>
