@@ -231,12 +231,6 @@ export default function HomePage() {
                   sizes="(max-width: 600px) 100vw, (max-width: 980px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}
                 />
-                <div className="p-meta">
-                  <div>
-                    <div className="c">{p.meta}</div>
-                    <div className="t">{p.title}</div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>

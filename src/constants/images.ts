@@ -48,11 +48,16 @@ export const IMAGES = {
   workshop: u("photo-1700973408133-b45276ec8feb"), // boards stacked = warehouse
   woodenDoor: u("photo-1682450195449-32ab08ddf7e7"), // large wooden door
 
+  // ── Awards — real photos from the showroom ───────────────────────────
+  awardCenturyCertificate: "/awards/century-diamond-certificate.jpeg",
+  awardCenturyBook: "/awards/century-diamond-book.jpeg",
+  awardDurianTrophy: "/awards/durian-highest-sales.jpeg",
+
   // ── Legacy aliases kept for older imports ────────────────────────────
-  texture1: u("photo-1762978902169-e5789f7b56b8"), // wood grain (was problem image)
-  texture2: u("photo-1611600700192-d87eaeed4f81"), // brown/white board (was brick — fixed)
-  facade: uPlus("premium_photo-1661876005092-57b7b5d4060d"), // chalet
-  store: uPlus("premium_photo-1683141318297-75a3d8e86476"), // living with dresser
+  texture1: u("photo-1762978902169-e5789f7b56b8"),
+  texture2: u("photo-1611600700192-d87eaeed4f81"),
+  facade: uPlus("premium_photo-1661876005092-57b7b5d4060d"),
+  store: uPlus("premium_photo-1683141318297-75a3d8e86476"),
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;

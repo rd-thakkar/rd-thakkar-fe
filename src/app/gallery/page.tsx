@@ -60,7 +60,6 @@ export default function GalleryPage() {
                   sizes="(max-width: 800px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}
                 />
-                <div className="glabel">{g.label}</div>
               </div>
             ))}
           </div>

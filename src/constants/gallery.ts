@@ -5,7 +5,8 @@ export type GalleryCategory =
   | "Kitchen"
   | "Commercial"
   | "Cabinetry"
-  | "Materials";
+  | "Materials"
+  | "Awards";
 
 export type GalleryItem = {
   src: string;
@@ -22,6 +23,7 @@ export const GALLERY_FILTERS: Array<"All" | GalleryCategory> = [
   "Commercial",
   "Cabinetry",
   "Materials",
+  "Awards",
 ];
 
 // 18 items, every photo verified to show wood, cabinetry, or wood-rich interiors.
@@ -162,6 +164,29 @@ export const GALLERY: GalleryItem[] = [
     cat: "Materials",
     colSpan: 12,
     rowSpan: 3,
+  },
+
+  // ── Awards ────────────────────────────────────────────────────────────
+  {
+    src: IMAGES.awardCenturyCertificate,
+    label: "Century Regal Club · Diamond Circle Certificate",
+    cat: "Awards",
+    colSpan: 4,
+    rowSpan: 5,
+  },
+  {
+    src: IMAGES.awardCenturyBook,
+    label: "Century Regal Club · Diamond Circle",
+    cat: "Awards",
+    colSpan: 4,
+    rowSpan: 5,
+  },
+  {
+    src: IMAGES.awardDurianTrophy,
+    label: "Durian Laminates · Highest Sales Performance — Projects",
+    cat: "Awards",
+    colSpan: 4,
+    rowSpan: 5,
   },
 ];
 

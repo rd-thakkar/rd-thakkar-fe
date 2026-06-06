@@ -63,11 +63,11 @@ export default function AboutPage() {
             <span className="dot" />
             {ABOUT.commitment.eyebrow}
           </span>
-          <h2 className="display" style={{ marginTop: 16, marginBottom: 24, fontSize: "clamp(32px,4vw,56px)" }}>
+          <h2 className="display commitment-headline">
             {ABOUT.commitment.headlineStart}
             <span className="red-it">{ABOUT.commitment.headlineItalic}</span>
           </h2>
-          <p style={{ fontSize: 18, maxWidth: 720, lineHeight: 1.65 }}>
+          <p className="commitment-body">
             {ABOUT.commitment.body}
           </p>
         </div>
